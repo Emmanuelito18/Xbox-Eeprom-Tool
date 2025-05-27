@@ -46,7 +46,6 @@ public class Tema {
 
     /**
      * Actualiza el tema del programa en tiempo real al tema oscuro
-     *
      * @param ventana La <code>ventana</code> en la que cambiará el tema
      */
     //<editor-fold defaultstate="collapsed" desc="Actualiza al tema oscuro">
@@ -62,7 +61,6 @@ public class Tema {
     
     /**
      * Actualiza el tema del programa en tiempo real al tema claro
-     *
      * @param ventana La <code>ventana</code> en la que cambiará el tema
      */
     //<editor-fold defaultstate="collapsed" desc="Actualiza al tema claro">
@@ -76,4 +74,5 @@ public class Tema {
         System.out.println();
     }
     //</editor-fold>
+    
 }
