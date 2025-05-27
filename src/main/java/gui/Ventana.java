@@ -48,6 +48,10 @@ public class Ventana extends javax.swing.JFrame {
         panelTituloExtras = new javax.swing.JPanel();
         etiquetaTituloExtras = new javax.swing.JLabel();
         etiquetaExtraWeb = new javax.swing.JLabel();
+        panelProgreso = new javax.swing.JPanel();
+        panelTituloProgreso = new javax.swing.JPanel();
+        etiquetaTituloProgreso = new javax.swing.JLabel();
+        barraProgreso = new javax.swing.JProgressBar();
         barraMenu = new javax.swing.JMenuBar();
         eeprom = new javax.swing.JMenu();
         eepromLeer = new javax.swing.JMenuItem();
@@ -65,6 +69,7 @@ public class Ventana extends javax.swing.JFrame {
         idiomaIngles = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Xbox eeprom tool");
 
         panelPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -156,7 +161,7 @@ public class Ventana extends javax.swing.JFrame {
             panelEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEepromLayout.createSequentialGroup()
                 .addComponent(panelTituloEeprom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEepromLeer)
                     .addComponent(botonEepromEscribir))
@@ -200,7 +205,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(panelTituloConsola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(panelConsolaLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(botonConsolaInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(botonConsolaDiagrama)
@@ -257,6 +262,8 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
+        panelExtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         etiquetaTituloExtras.setText("extras");
 
         javax.swing.GroupLayout panelTituloExtrasLayout = new javax.swing.GroupLayout(panelTituloExtras);
@@ -301,29 +308,77 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
+        panelProgreso.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        etiquetaTituloProgreso.setText("progreso");
+
+        javax.swing.GroupLayout panelTituloProgresoLayout = new javax.swing.GroupLayout(panelTituloProgreso);
+        panelTituloProgreso.setLayout(panelTituloProgresoLayout);
+        panelTituloProgresoLayout.setHorizontalGroup(
+            panelTituloProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloProgresoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiquetaTituloProgreso)
+                .addGap(189, 189, 189))
+        );
+        panelTituloProgresoLayout.setVerticalGroup(
+            panelTituloProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloProgresoLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(etiquetaTituloProgreso)
+                .addGap(19, 19, 19))
+        );
+
+        barraProgreso.setIndeterminate(true);
+
+        javax.swing.GroupLayout panelProgresoLayout = new javax.swing.GroupLayout(panelProgreso);
+        panelProgreso.setLayout(panelProgresoLayout);
+        panelProgresoLayout.setHorizontalGroup(
+            panelProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelTituloProgreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProgresoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(barraProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
+        );
+        panelProgresoLayout.setVerticalGroup(
+            panelProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProgresoLayout.createSequentialGroup()
+                .addComponent(panelTituloProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(barraProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 18, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelEeprom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelConsola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelEsp82266, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelExtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelConsola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelEsp82266, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(panelExtras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelProgreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addComponent(panelPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelEeprom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelEeprom, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelEsp82266, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(panelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         eeprom.setText("menu.eeprom");
@@ -441,6 +496,7 @@ public class Ventana extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JProgressBar barraProgreso;
     private javax.swing.JButton botonConsolaDiagrama;
     private javax.swing.JButton botonConsolaInfo;
     private javax.swing.JButton botonEepromEscribir;
@@ -460,22 +516,23 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaTituloEeprom;
     private javax.swing.JLabel etiquetaTituloEsp8266;
     private javax.swing.JLabel etiquetaTituloExtras;
+    private javax.swing.JLabel etiquetaTituloProgreso;
     private javax.swing.JLabel etiquetaTituloPuerto;
     private javax.swing.JMenu idioma;
     private javax.swing.JMenuItem idiomaEspanol;
     private javax.swing.JMenuItem idiomaIngles;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel panelConsola;
     private javax.swing.JPanel panelEeprom;
     private javax.swing.JPanel panelEsp82266;
     private javax.swing.JPanel panelExtras;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPanel panelProgreso;
     private javax.swing.JPanel panelPuerto;
     private javax.swing.JPanel panelTituloConsola;
     private javax.swing.JPanel panelTituloEeprom;
     private javax.swing.JPanel panelTituloEsp8266;
     private javax.swing.JPanel panelTituloExtras;
+    private javax.swing.JPanel panelTituloProgreso;
     private javax.swing.JPanel panelTituloPuerto;
     private javax.swing.JComboBox<String> puertos;
     private javax.swing.JMenu tema;
