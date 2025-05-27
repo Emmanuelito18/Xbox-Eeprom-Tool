@@ -25,6 +25,7 @@ public class Tema {
         try {
             // Puedes usar Nimbus, FlatLaf u otro
             UIManager.setLookAndFeel(new FlatMacDarkLaf());
+            redondeador();
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
@@ -39,6 +40,7 @@ public class Tema {
         try {
             // Puedes usar Nimbus, FlatLaf u otro
             UIManager.setLookAndFeel(new FlatMacLightLaf());
+            redondeador();
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
@@ -47,27 +49,31 @@ public class Tema {
 
     /**
      * Actualiza el tema del programa en tiempo real al tema oscuro
+     *
      * @param ventana La <code>ventana</code> en la que cambiará el tema
      */
     //<editor-fold defaultstate="collapsed" desc="Actualiza al tema oscuro">
     public void actualizaTemaOscuro(JFrame ventana) {
         try {
             UIManager.setLookAndFeel(new FlatMacDarkLaf());
+            redondeador();
             SwingUtilities.updateComponentTreeUI(ventana);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
     //</editor-fold>
-    
+
     /**
      * Actualiza el tema del programa en tiempo real al tema claro
+     *
      * @param ventana La <code>ventana</code> en la que cambiará el tema
      */
     //<editor-fold defaultstate="collapsed" desc="Actualiza al tema claro">
     public void actualizarTemaClaro(JFrame ventana) {
         try {
             UIManager.setLookAndFeel(new FlatMacLightLaf());
+            redondeador();
             SwingUtilities.updateComponentTreeUI(ventana);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -75,27 +81,41 @@ public class Tema {
         System.out.println();
     }
     //</editor-fold>
-    
+
     /**
      * Aplica el tema por defecto la primera vez que se ejecuta el programa
-     * @param ventana <code>ventana</code> es la ventana en la que se aplicará el tema
+     *
+     * @param ventana <code>ventana</code> es la ventana en la que se aplicará
+     * el tema
      */
     //<editor-fold defaultstate="collapsed" desc="Aplica tema por defecto">
-    public void aplicarTemaPorDefecto(JFrame ventana){
+    public void aplicarTemaPorDefecto(JFrame ventana) {
         boolean esOscuro = FlatLaf.isLafDark();
-        
+
         try {
             if (esOscuro) {
                 temaOscuro();
-            }else{
+            } else {
                 temaClaro();
             }
-            if (ventana!=null) {
+            if (ventana != null) {
                 SwingUtilities.updateComponentTreeUI(ventana);
             }
         } catch (Exception error) {
             error.printStackTrace();
         }
+    }
+    //</editor-fold>
+
+    /**
+     * Redondea los elementos de la interfaz
+     */
+    //<editor-fold defaultstate="collapsed" desc="Redondea los componentes de la interfaz">
+    public void redondeador() {
+        UIManager.put("Button.arc", 999);
+        UIManager.put("Component.arc", 999);
+        UIManager.put("ProgressBar.arc", 999);
+        UIManager.put("TextComponent.arc", 999);
     }
     //</editor-fold>
 }
