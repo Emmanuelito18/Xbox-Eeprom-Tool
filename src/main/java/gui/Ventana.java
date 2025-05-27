@@ -1,5 +1,7 @@
 package gui;
 
+import logica.Tema;
+
 /**
  * Esta clase es la interfaz gráfica del programa
  * @author Emmanuelito18
@@ -23,10 +25,49 @@ public class Ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         etiqueta = new javax.swing.JLabel();
+        barraMenu = new javax.swing.JMenuBar();
+        tema = new javax.swing.JMenu();
+        temaOscuro = new javax.swing.JMenuItem();
+        temaClaro = new javax.swing.JMenuItem();
+        eeprom = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         etiqueta.setText("Probador");
+
+        tema.setText("menu.tema");
+
+        temaOscuro.setText("tema.oscuro");
+        temaOscuro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                temaOscuroActionPerformed(evt);
+            }
+        });
+        tema.add(temaOscuro);
+
+        temaClaro.setText("tema.claro");
+        temaClaro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                temaClaroActionPerformed(evt);
+            }
+        });
+        tema.add(temaClaro);
+
+        barraMenu.add(tema);
+
+        eeprom.setText("menu.eeprom");
+
+        jMenuItem1.setText("eeprom.leer");
+        eeprom.add(jMenuItem1);
+
+        jMenuItem2.setText("eeprom.escribir");
+        eeprom.add(jMenuItem2);
+
+        barraMenu.add(eeprom);
+
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,13 +83,29 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(etiqueta)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    Tema temaNuevo=new Tema();
+    private void temaOscuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temaOscuroActionPerformed
+       temaNuevo.actualizaTemaOscuro(this);
+    }//GEN-LAST:event_temaOscuroActionPerformed
+
+    private void temaClaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temaClaroActionPerformed
+        temaNuevo.actualizarTemaClaro(this);
+    }//GEN-LAST:event_temaClaroActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JMenu eeprom;
     private javax.swing.JLabel etiqueta;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu tema;
+    private javax.swing.JMenuItem temaClaro;
+    private javax.swing.JMenuItem temaOscuro;
     // End of variables declaration//GEN-END:variables
 }
