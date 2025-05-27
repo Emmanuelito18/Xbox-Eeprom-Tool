@@ -13,12 +13,12 @@ import javax.swing.SwingUtilities;//para cambair el tema del programa
 public class Main {
 
     /**
-     *
+     * Es la función principal de todo el programa
      * @param args
      */
     public static void main(String[] args) {
         Tema apariencia=new Tema();
-        apariencia.TemaOscuro();
+        apariencia.aplicarTemaPorDefecto(null);
 
         // Crear la ventana en el hilo de Swing
         SwingUtilities.invokeLater(() -> {
