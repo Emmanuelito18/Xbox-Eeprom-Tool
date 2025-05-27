@@ -26,16 +26,61 @@ public class Ventana extends javax.swing.JFrame {
 
         etiqueta = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
+        eeprom = new javax.swing.JMenu();
+        eepromLeer = new javax.swing.JMenuItem();
+        eepromEscribir = new javax.swing.JMenuItem();
+        esp8266 = new javax.swing.JMenu();
+        esp8266Programar = new javax.swing.JMenuItem();
+        consola = new javax.swing.JMenu();
+        consolaInfo = new javax.swing.JMenuItem();
+        consolaDiagrama = new javax.swing.JMenuItem();
         tema = new javax.swing.JMenu();
         temaOscuro = new javax.swing.JMenuItem();
         temaClaro = new javax.swing.JMenuItem();
-        eeprom = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        idioma = new javax.swing.JMenu();
+        idiomaEspanol = new javax.swing.JMenuItem();
+        idiomaIngles = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         etiqueta.setText("Probador");
+
+        eeprom.setText("menu.eeprom");
+
+        eepromLeer.setText("eeprom.leer");
+        eepromLeer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eepromLeerActionPerformed(evt);
+            }
+        });
+        eeprom.add(eepromLeer);
+
+        eepromEscribir.setText("eeprom.escribir");
+        eeprom.add(eepromEscribir);
+
+        barraMenu.add(eeprom);
+
+        esp8266.setText("menu.esp8266");
+
+        esp8266Programar.setText("esp8266.programar");
+        esp8266.add(esp8266Programar);
+
+        barraMenu.add(esp8266);
+
+        consola.setText("menu.consola");
+
+        consolaInfo.setText("consola.info");
+        consolaInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consolaInfoActionPerformed(evt);
+            }
+        });
+        consola.add(consolaInfo);
+
+        consolaDiagrama.setText("consola.diagrama");
+        consola.add(consolaDiagrama);
+
+        barraMenu.add(consola);
 
         tema.setText("menu.tema");
 
@@ -57,15 +102,20 @@ public class Ventana extends javax.swing.JFrame {
 
         barraMenu.add(tema);
 
-        eeprom.setText("menu.eeprom");
+        idioma.setText("menu.idioma");
 
-        jMenuItem1.setText("eeprom.leer");
-        eeprom.add(jMenuItem1);
+        idiomaEspanol.setText("idioma.espanol");
+        idioma.add(idiomaEspanol);
 
-        jMenuItem2.setText("eeprom.escribir");
-        eeprom.add(jMenuItem2);
+        idiomaIngles.setText("idioma.ingles");
+        idiomaIngles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idiomaInglesActionPerformed(evt);
+            }
+        });
+        idioma.add(idiomaIngles);
 
-        barraMenu.add(eeprom);
+        barraMenu.add(idioma);
 
         setJMenuBar(barraMenu);
 
@@ -76,14 +126,14 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addComponent(etiqueta)
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(etiqueta)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,12 +148,32 @@ public class Ventana extends javax.swing.JFrame {
         temaNuevo.actualizarTemaClaro(this);
     }//GEN-LAST:event_temaClaroActionPerformed
 
+    private void eepromLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eepromLeerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eepromLeerActionPerformed
+
+    private void consolaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consolaInfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consolaInfoActionPerformed
+
+    private void idiomaInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idiomaInglesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idiomaInglesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JMenu consola;
+    private javax.swing.JMenuItem consolaDiagrama;
+    private javax.swing.JMenuItem consolaInfo;
     private javax.swing.JMenu eeprom;
+    private javax.swing.JMenuItem eepromEscribir;
+    private javax.swing.JMenuItem eepromLeer;
+    private javax.swing.JMenu esp8266;
+    private javax.swing.JMenuItem esp8266Programar;
     private javax.swing.JLabel etiqueta;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu idioma;
+    private javax.swing.JMenuItem idiomaEspanol;
+    private javax.swing.JMenuItem idiomaIngles;
     private javax.swing.JMenu tema;
     private javax.swing.JMenuItem temaClaro;
     private javax.swing.JMenuItem temaOscuro;

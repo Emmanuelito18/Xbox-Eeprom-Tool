@@ -4,6 +4,58 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="barraMenu">
       <SubComponents>
+        <Menu class="javax.swing.JMenu" name="eeprom">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="menu.eeprom"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="eepromLeer">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="eeprom.leer"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eepromLeerActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="eepromEscribir">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="eeprom.escribir"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="esp8266">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="menu.esp8266"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="esp8266Programar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="esp8266.programar"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="consola">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="menu.consola"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="consolaInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="consola.info"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consolaInfoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="consolaDiagrama">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="consola.diagrama"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="tema">
           <Properties>
             <Property name="text" type="java.lang.String" value="menu.tema"/>
@@ -27,20 +79,23 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="eeprom">
+        <Menu class="javax.swing.JMenu" name="idioma">
           <Properties>
-            <Property name="text" type="java.lang.String" value="menu.eeprom"/>
+            <Property name="text" type="java.lang.String" value="menu.idioma"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="idiomaEspanol">
               <Properties>
-                <Property name="text" type="java.lang.String" value="eeprom.leer"/>
+                <Property name="text" type="java.lang.String" value="idioma.espanol"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="idiomaIngles">
               <Properties>
-                <Property name="text" type="java.lang.String" value="eeprom.escribir"/>
+                <Property name="text" type="java.lang.String" value="idioma.ingles"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idiomaInglesActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -73,7 +128,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
               <Component id="etiqueta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="196" max="32767" attributes="0"/>
+              <EmptySpace pref="218" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,7 +137,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
               <Component id="etiqueta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace pref="135" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
