@@ -24,7 +24,30 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        etiqueta = new javax.swing.JLabel();
+        panelPrincipal = new javax.swing.JPanel();
+        panelPuerto = new javax.swing.JPanel();
+        panelTituloPuerto = new javax.swing.JPanel();
+        etiquetaTituloPuerto = new javax.swing.JLabel();
+        etiquetaPuerto = new javax.swing.JLabel();
+        puertos = new javax.swing.JComboBox<>();
+        panelEeprom = new javax.swing.JPanel();
+        panelTituloEeprom = new javax.swing.JPanel();
+        etiquetaTituloEeprom = new javax.swing.JLabel();
+        botonEepromLeer = new javax.swing.JButton();
+        botonEepromEscribir = new javax.swing.JButton();
+        panelConsola = new javax.swing.JPanel();
+        panelTituloConsola = new javax.swing.JPanel();
+        etiquetaTituloConsola = new javax.swing.JLabel();
+        botonConsolaInfo = new javax.swing.JButton();
+        botonConsolaDiagrama = new javax.swing.JButton();
+        panelEsp82266 = new javax.swing.JPanel();
+        panelTituloEsp8266 = new javax.swing.JPanel();
+        etiquetaTituloEsp8266 = new javax.swing.JLabel();
+        botonEsp8266Programar = new javax.swing.JButton();
+        panelExtras = new javax.swing.JPanel();
+        panelTituloExtras = new javax.swing.JPanel();
+        etiquetaTituloExtras = new javax.swing.JLabel();
+        etiquetaExtraWeb = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         eeprom = new javax.swing.JMenu();
         eepromLeer = new javax.swing.JMenuItem();
@@ -43,7 +66,265 @@ public class Ventana extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        etiqueta.setText("Probador");
+        panelPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        etiquetaTituloPuerto.setText("informacion.puerto");
+
+        javax.swing.GroupLayout panelTituloPuertoLayout = new javax.swing.GroupLayout(panelTituloPuerto);
+        panelTituloPuerto.setLayout(panelTituloPuertoLayout);
+        panelTituloPuertoLayout.setHorizontalGroup(
+            panelTituloPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloPuertoLayout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addComponent(etiquetaTituloPuerto)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelTituloPuertoLayout.setVerticalGroup(
+            panelTituloPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloPuertoLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(etiquetaTituloPuerto)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        etiquetaPuerto.setText("puerto.com");
+
+        puertos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout panelPuertoLayout = new javax.swing.GroupLayout(panelPuerto);
+        panelPuerto.setLayout(panelPuertoLayout);
+        panelPuertoLayout.setHorizontalGroup(
+            panelPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPuertoLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(etiquetaPuerto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(puertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelPuertoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelTituloPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelPuertoLayout.setVerticalGroup(
+            panelPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPuertoLayout.createSequentialGroup()
+                .addComponent(panelTituloPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaPuerto)
+                    .addComponent(puertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        etiquetaTituloEeprom.setText("informacion.eeprom");
+
+        javax.swing.GroupLayout panelTituloEepromLayout = new javax.swing.GroupLayout(panelTituloEeprom);
+        panelTituloEeprom.setLayout(panelTituloEepromLayout);
+        panelTituloEepromLayout.setHorizontalGroup(
+            panelTituloEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloEepromLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(etiquetaTituloEeprom)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelTituloEepromLayout.setVerticalGroup(
+            panelTituloEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloEepromLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(etiquetaTituloEeprom)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        botonEepromLeer.setText("eeprom.leer");
+
+        botonEepromEscribir.setText("eeprom.escribir");
+
+        javax.swing.GroupLayout panelEepromLayout = new javax.swing.GroupLayout(panelEeprom);
+        panelEeprom.setLayout(panelEepromLayout);
+        panelEepromLayout.setHorizontalGroup(
+            panelEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelTituloEeprom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelEepromLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(botonEepromLeer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonEepromEscribir)
+                .addGap(52, 52, 52))
+        );
+        panelEepromLayout.setVerticalGroup(
+            panelEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEepromLayout.createSequentialGroup()
+                .addComponent(panelTituloEeprom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGroup(panelEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonEepromLeer)
+                    .addComponent(botonEepromEscribir))
+                .addGap(26, 26, 26))
+        );
+
+        etiquetaTituloConsola.setText("informacion.consola");
+
+        javax.swing.GroupLayout panelTituloConsolaLayout = new javax.swing.GroupLayout(panelTituloConsola);
+        panelTituloConsola.setLayout(panelTituloConsolaLayout);
+        panelTituloConsolaLayout.setHorizontalGroup(
+            panelTituloConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloConsolaLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(etiquetaTituloConsola)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelTituloConsolaLayout.setVerticalGroup(
+            panelTituloConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloConsolaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(etiquetaTituloConsola)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        botonConsolaInfo.setText("consola.info");
+        botonConsolaInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonConsolaInfoActionPerformed(evt);
+            }
+        });
+
+        botonConsolaDiagrama.setText("consola.diagrama");
+
+        javax.swing.GroupLayout panelConsolaLayout = new javax.swing.GroupLayout(panelConsola);
+        panelConsola.setLayout(panelConsolaLayout);
+        panelConsolaLayout.setHorizontalGroup(
+            panelConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConsolaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelTituloConsola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(panelConsolaLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addComponent(botonConsolaInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(botonConsolaDiagrama)
+                .addGap(70, 70, 70))
+        );
+        panelConsolaLayout.setVerticalGroup(
+            panelConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConsolaLayout.createSequentialGroup()
+                .addComponent(panelTituloConsola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonConsolaInfo)
+                    .addComponent(botonConsolaDiagrama))
+                .addGap(124, 124, 124))
+        );
+
+        etiquetaTituloEsp8266.setText("programar.esp8266");
+
+        javax.swing.GroupLayout panelTituloEsp8266Layout = new javax.swing.GroupLayout(panelTituloEsp8266);
+        panelTituloEsp8266.setLayout(panelTituloEsp8266Layout);
+        panelTituloEsp8266Layout.setHorizontalGroup(
+            panelTituloEsp8266Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloEsp8266Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiquetaTituloEsp8266)
+                .addGap(159, 159, 159))
+        );
+        panelTituloEsp8266Layout.setVerticalGroup(
+            panelTituloEsp8266Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloEsp8266Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(etiquetaTituloEsp8266)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        botonEsp8266Programar.setText("programar.esp8266");
+
+        javax.swing.GroupLayout panelEsp82266Layout = new javax.swing.GroupLayout(panelEsp82266);
+        panelEsp82266.setLayout(panelEsp82266Layout);
+        panelEsp82266Layout.setHorizontalGroup(
+            panelEsp82266Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelTituloEsp8266, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelEsp82266Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(botonEsp8266Programar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelEsp82266Layout.setVerticalGroup(
+            panelEsp82266Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEsp82266Layout.createSequentialGroup()
+                .addComponent(panelTituloEsp8266, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonEsp8266Programar)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        etiquetaTituloExtras.setText("extras");
+
+        javax.swing.GroupLayout panelTituloExtrasLayout = new javax.swing.GroupLayout(panelTituloExtras);
+        panelTituloExtras.setLayout(panelTituloExtrasLayout);
+        panelTituloExtrasLayout.setHorizontalGroup(
+            panelTituloExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloExtrasLayout.createSequentialGroup()
+                .addGap(189, 189, 189)
+                .addComponent(etiquetaTituloExtras)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelTituloExtrasLayout.setVerticalGroup(
+            panelTituloExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloExtrasLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(etiquetaTituloExtras)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        etiquetaExtraWeb.setText("extras.web");
+
+        javax.swing.GroupLayout panelExtrasLayout = new javax.swing.GroupLayout(panelExtras);
+        panelExtras.setLayout(panelExtrasLayout);
+        panelExtrasLayout.setHorizontalGroup(
+            panelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtrasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelTituloExtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtrasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiquetaExtraWeb)
+                .addGap(194, 194, 194))
+        );
+        panelExtrasLayout.setVerticalGroup(
+            panelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelExtrasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelTituloExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(etiquetaExtraWeb)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelEeprom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelConsola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelEsp82266, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelExtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addComponent(panelPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelEeprom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelEsp82266, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         eeprom.setText("menu.eeprom");
 
@@ -123,17 +404,11 @@ public class Ventana extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(etiqueta)
-                .addContainerGap(218, Short.MAX_VALUE))
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(etiqueta)
-                .addContainerGap(135, Short.MAX_VALUE))
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -160,8 +435,17 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idiomaInglesActionPerformed
 
+    private void botonConsolaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConsolaInfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonConsolaInfoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JButton botonConsolaDiagrama;
+    private javax.swing.JButton botonConsolaInfo;
+    private javax.swing.JButton botonEepromEscribir;
+    private javax.swing.JButton botonEepromLeer;
+    private javax.swing.JButton botonEsp8266Programar;
     private javax.swing.JMenu consola;
     private javax.swing.JMenuItem consolaDiagrama;
     private javax.swing.JMenuItem consolaInfo;
@@ -170,10 +454,30 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenuItem eepromLeer;
     private javax.swing.JMenu esp8266;
     private javax.swing.JMenuItem esp8266Programar;
-    private javax.swing.JLabel etiqueta;
+    private javax.swing.JLabel etiquetaExtraWeb;
+    private javax.swing.JLabel etiquetaPuerto;
+    private javax.swing.JLabel etiquetaTituloConsola;
+    private javax.swing.JLabel etiquetaTituloEeprom;
+    private javax.swing.JLabel etiquetaTituloEsp8266;
+    private javax.swing.JLabel etiquetaTituloExtras;
+    private javax.swing.JLabel etiquetaTituloPuerto;
     private javax.swing.JMenu idioma;
     private javax.swing.JMenuItem idiomaEspanol;
     private javax.swing.JMenuItem idiomaIngles;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel panelConsola;
+    private javax.swing.JPanel panelEeprom;
+    private javax.swing.JPanel panelEsp82266;
+    private javax.swing.JPanel panelExtras;
+    private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPanel panelPuerto;
+    private javax.swing.JPanel panelTituloConsola;
+    private javax.swing.JPanel panelTituloEeprom;
+    private javax.swing.JPanel panelTituloEsp8266;
+    private javax.swing.JPanel panelTituloExtras;
+    private javax.swing.JPanel panelTituloPuerto;
+    private javax.swing.JComboBox<String> puertos;
     private javax.swing.JMenu tema;
     private javax.swing.JMenuItem temaClaro;
     private javax.swing.JMenuItem temaOscuro;
