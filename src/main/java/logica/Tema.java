@@ -1,9 +1,9 @@
 package logica;
 
 // <editor-fold defaultstate="collapsed" desc="Librerias para look and feel">
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
-import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.SwingUtilities;
@@ -24,7 +24,7 @@ public class Tema {
     public void temaOscuro() {
         try {
             // Puedes usar Nimbus, FlatLaf u otro
-            UIManager.setLookAndFeel(new FlatDarkLaf());
+            UIManager.setLookAndFeel(new FlatMacDarkLaf());
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
@@ -38,7 +38,7 @@ public class Tema {
     public void temaClaro() {
         try {
             // Puedes usar Nimbus, FlatLaf u otro
-            UIManager.setLookAndFeel(new FlatLightLaf());
+            UIManager.setLookAndFeel(new FlatMacLightLaf());
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class Tema {
     //<editor-fold defaultstate="collapsed" desc="Actualiza al tema oscuro">
     public void actualizaTemaOscuro(JFrame ventana) {
         try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
+            UIManager.setLookAndFeel(new FlatMacDarkLaf());
             SwingUtilities.updateComponentTreeUI(ventana);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -67,7 +67,7 @@ public class Tema {
     //<editor-fold defaultstate="collapsed" desc="Actualiza al tema claro">
     public void actualizarTemaClaro(JFrame ventana) {
         try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
+            UIManager.setLookAndFeel(new FlatMacLightLaf());
             SwingUtilities.updateComponentTreeUI(ventana);
         } catch (Exception ex) {
             ex.printStackTrace();
