@@ -21,13 +21,13 @@ public class Traduccion extends Properties {
          en función del valor del parámetro idioma.*/
         switch(idioma){
             case "Español":
-                getProperty("espanol.properties");
+                getProperties("espanol.properties");
                 break;
             case "Inglés":
-                getProperty("ingles.properties");
+                getProperties("ingles.properties");
                 break;
             default:
-                getProperty("espanol.properties");
+                getProperties("espanol.properties");
         }
     }
     
@@ -39,7 +39,7 @@ public class Traduccion extends Properties {
         try {
             // Se utiliza el método load de la clase Properties para cargar el contenido
             // del archivo de propiedades en el objeto Properties actual.
-            this.load(getClass().getResourceAsStream(idioma));
+            this.load(getClass().getClassLoader().getResourceAsStream(idioma));
         } catch (IOException ex) {
             // Si ocurre una excepción de tipo IOException durante la carga del archivo,
             // se imprime la traza de la pila utilizando el método printStackTrace del objeto excepción.
