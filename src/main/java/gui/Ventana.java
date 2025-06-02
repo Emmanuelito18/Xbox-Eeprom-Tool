@@ -1,6 +1,7 @@
 package gui;
 
 import logica.Tema;
+import logica.Traduccion;
 
 /**
  * Esta clase es la interfaz gráfica del programa
@@ -13,6 +14,35 @@ public class Ventana extends javax.swing.JFrame {
      */
     public Ventana() {
         initComponents();
+        this.cambiarIdioma("Español");//Establece el idioma por defecto a español
+    }
+    
+    /**
+     * Este método sirve para hacer la traduccion del programa en tiempo real
+     * @param nombreIdioma 
+     */
+    private void cambiarIdioma(String nombreIdioma){
+        Traduccion traduccion = new Traduccion(nombreIdioma);
+        
+        this.tema.setText(traduccion.getProperty("menu.tema"));
+        this.temaOscuro.setText(traduccion.getProperty("tema.oscuro"));
+        this.temaClaro.setText(traduccion.getProperty("tema.claro"));
+        this.idioma.setText(traduccion.getProperty("menu.idioma"));
+        this.idiomaEspanol.setText(traduccion.getProperty("idioma.espanol"));
+        this.idiomaIngles.setText(traduccion.getProperty("idioma.ingles"));
+        this.etiquetaTituloPuerto.setText(traduccion.getProperty("informacion.puerto"));
+        this.etiquetaPuerto.setText(traduccion.getProperty("puerto.com"));
+        this.etiquetaTituloEeprom.setText(traduccion.getProperty("informacion.eeprom"));
+        this.botonEepromLeer.setText(traduccion.getProperty("eeprom.leer"));
+        this.botonEepromEscribir.setText(traduccion.getProperty("eeprom.escribir"));
+        this.etiquetaTituloConsola.setText(traduccion.getProperty("informacion.consola"));
+        this.botonConsolaInfo.setText(traduccion.getProperty("consola.info"));
+        this.botonConsolaDiagrama.setText(traduccion.getProperty("consola.diagrama"));
+        this.etiquetaTituloEsp8266.setText(traduccion.getProperty("esp8266"));
+        this.botonEsp8266Programar.setText(traduccion.getProperty("programar.esp8266"));
+        this.etiquetaTituloProgreso.setText(traduccion.getProperty("progreso"));
+        this.etiquetaTituloExtras.setText(traduccion.getProperty("extras"));
+        this.etiquetaExtraWeb.setText(traduccion.getProperty("extras.web"));
     }
         
     /**
@@ -67,23 +97,25 @@ public class Ventana extends javax.swing.JFrame {
 
         panelPuerto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        etiquetaTituloPuerto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         etiquetaTituloPuerto.setText("informacion.puerto");
+        etiquetaTituloPuerto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelTituloPuertoLayout = new javax.swing.GroupLayout(panelTituloPuerto);
         panelTituloPuerto.setLayout(panelTituloPuertoLayout);
         panelTituloPuertoLayout.setHorizontalGroup(
             panelTituloPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloPuertoLayout.createSequentialGroup()
-                .addGap(158, 158, 158)
+                .addGap(202, 202, 202)
                 .addComponent(etiquetaTituloPuerto)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelTituloPuertoLayout.setVerticalGroup(
             panelTituloPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTituloPuertoLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloPuertoLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(etiquetaTituloPuerto)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         etiquetaPuerto.setText("puerto.com");
@@ -95,15 +127,12 @@ public class Ventana extends javax.swing.JFrame {
         panelPuertoLayout.setHorizontalGroup(
             panelPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPuertoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelTituloPuerto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(panelPuertoLayout.createSequentialGroup()
                 .addGap(134, 134, 134)
                 .addComponent(etiquetaPuerto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(puertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
+            .addComponent(panelTituloPuerto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelPuertoLayout.setVerticalGroup(
             panelPuertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,16 +147,18 @@ public class Ventana extends javax.swing.JFrame {
 
         panelEeprom.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        etiquetaTituloEeprom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         etiquetaTituloEeprom.setText("informacion.eeprom");
+        etiquetaTituloEeprom.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelTituloEepromLayout = new javax.swing.GroupLayout(panelTituloEeprom);
         panelTituloEeprom.setLayout(panelTituloEepromLayout);
         panelTituloEepromLayout.setHorizontalGroup(
             panelTituloEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTituloEepromLayout.createSequentialGroup()
-                .addGap(165, 165, 165)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloEepromLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(etiquetaTituloEeprom)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(205, 205, 205))
         );
         panelTituloEepromLayout.setVerticalGroup(
             panelTituloEepromLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,23 +197,25 @@ public class Ventana extends javax.swing.JFrame {
 
         panelConsola.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        etiquetaTituloConsola.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         etiquetaTituloConsola.setText("informacion.consola");
+        etiquetaTituloConsola.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelTituloConsolaLayout = new javax.swing.GroupLayout(panelTituloConsola);
         panelTituloConsola.setLayout(panelTituloConsolaLayout);
         panelTituloConsolaLayout.setHorizontalGroup(
             panelTituloConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloConsolaLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
+                .addGap(194, 194, 194)
                 .addComponent(etiquetaTituloConsola)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelTituloConsolaLayout.setVerticalGroup(
             panelTituloConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTituloConsolaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloConsolaLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(etiquetaTituloConsola)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         botonConsolaInfo.setText("consola.info");
@@ -199,15 +232,12 @@ public class Ventana extends javax.swing.JFrame {
         panelConsolaLayout.setHorizontalGroup(
             panelConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelConsolaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelTituloConsola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(panelConsolaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addComponent(botonConsolaInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(botonConsolaDiagrama)
                 .addGap(70, 70, 70))
+            .addComponent(panelTituloConsola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelConsolaLayout.setVerticalGroup(
             panelConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,23 +252,25 @@ public class Ventana extends javax.swing.JFrame {
 
         panelEsp82266.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        etiquetaTituloEsp8266.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         etiquetaTituloEsp8266.setText("programar.esp8266");
+        etiquetaTituloEsp8266.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelTituloEsp8266Layout = new javax.swing.GroupLayout(panelTituloEsp8266);
         panelTituloEsp8266.setLayout(panelTituloEsp8266Layout);
         panelTituloEsp8266Layout.setHorizontalGroup(
             panelTituloEsp8266Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloEsp8266Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelTituloEsp8266Layout.createSequentialGroup()
+                .addGap(189, 189, 189)
                 .addComponent(etiquetaTituloEsp8266)
-                .addGap(159, 159, 159))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelTituloEsp8266Layout.setVerticalGroup(
             panelTituloEsp8266Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTituloEsp8266Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloEsp8266Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(etiquetaTituloEsp8266)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         botonEsp8266Programar.setText("programar.esp8266");
@@ -264,23 +296,25 @@ public class Ventana extends javax.swing.JFrame {
 
         panelExtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        etiquetaTituloExtras.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         etiquetaTituloExtras.setText("extras");
+        etiquetaTituloExtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelTituloExtrasLayout = new javax.swing.GroupLayout(panelTituloExtras);
         panelTituloExtras.setLayout(panelTituloExtrasLayout);
         panelTituloExtrasLayout.setHorizontalGroup(
             panelTituloExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloExtrasLayout.createSequentialGroup()
-                .addGap(202, 202, 202)
+                .addGap(206, 206, 206)
                 .addComponent(etiquetaTituloExtras)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelTituloExtrasLayout.setVerticalGroup(
             panelTituloExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTituloExtrasLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloExtrasLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(etiquetaTituloExtras)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         etiquetaExtraWeb.setText("extras.web");
@@ -290,13 +324,10 @@ public class Ventana extends javax.swing.JFrame {
         panelExtrasLayout.setHorizontalGroup(
             panelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtrasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelTituloExtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtrasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(196, Short.MAX_VALUE)
                 .addComponent(etiquetaExtraWeb)
                 .addGap(194, 194, 194))
+            .addComponent(panelTituloExtras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelExtrasLayout.setVerticalGroup(
             panelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,16 +341,18 @@ public class Ventana extends javax.swing.JFrame {
 
         panelProgreso.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        etiquetaTituloProgreso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         etiquetaTituloProgreso.setText("progreso");
+        etiquetaTituloProgreso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout panelTituloProgresoLayout = new javax.swing.GroupLayout(panelTituloProgreso);
         panelTituloProgreso.setLayout(panelTituloProgresoLayout);
         panelTituloProgresoLayout.setHorizontalGroup(
             panelTituloProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloProgresoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelTituloProgresoLayout.createSequentialGroup()
+                .addGap(196, 196, 196)
                 .addComponent(etiquetaTituloProgreso)
-                .addGap(194, 194, 194))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelTituloProgresoLayout.setVerticalGroup(
             panelTituloProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,7 +371,7 @@ public class Ventana extends javax.swing.JFrame {
             panelProgresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelTituloProgreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProgresoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addComponent(barraProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69))
         );
@@ -375,8 +408,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         tema.setText("menu.tema");
@@ -402,6 +434,11 @@ public class Ventana extends javax.swing.JFrame {
         idioma.setText("menu.idioma");
 
         idiomaEspanol.setText("idioma.espanol");
+        idiomaEspanol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idiomaEspanolActionPerformed(evt);
+            }
+        });
         idioma.add(idiomaEspanol);
 
         idiomaIngles.setText("idioma.ingles");
@@ -441,11 +478,17 @@ public class Ventana extends javax.swing.JFrame {
 
     private void idiomaInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idiomaInglesActionPerformed
         // TODO add your handling code here:
+        cambiarIdioma("Inglés");
     }//GEN-LAST:event_idiomaInglesActionPerformed
 
     private void botonConsolaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConsolaInfoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonConsolaInfoActionPerformed
+
+    private void idiomaEspanolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idiomaEspanolActionPerformed
+        // TODO add your handling code here:
+        cambiarIdioma("Español");
+    }//GEN-LAST:event_idiomaEspanolActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
