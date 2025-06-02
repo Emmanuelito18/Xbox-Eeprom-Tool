@@ -24,6 +24,7 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             Ventana miVentana = new Ventana();// Crear la ventana
             miVentana.setLocationRelativeTo(null);// Pone la ventana en el cenrto de la pantalla
+            miVentana.setResizable(false);//Evita que la venta cambie de tamaño
             miVentana.setVisible(true);// Mostrar la ventana
         });
     }
