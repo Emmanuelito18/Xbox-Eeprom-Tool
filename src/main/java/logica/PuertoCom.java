@@ -11,10 +11,19 @@ import java.util.List;
  */
 public class PuertoCom {
 
+    /**
+     * Este método se utiliza para obtener todos los puertos COM del sistema
+     * @return Devuelve un arreglo de todos los puertos COM obtenidos
+     */
     public SerialPort[] obtenerPuertos() {
         return SerialPort.getCommPorts();
     }
 
+    /**
+     * Este método se utilza para obtener listados todos los puertos COM
+     * detectados para mostrarlos en un JComboBox
+     * @return Devuelve la <code>lista</code> de los puertos COM con descripción
+     */
     public List<String> obtenerListaPuertos() {
 
         List<String> lista = new ArrayList<>();
