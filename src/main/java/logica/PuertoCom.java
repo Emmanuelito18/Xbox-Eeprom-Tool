@@ -1,5 +1,7 @@
 package logica;
 
+import com.fazecast.jSerialComm.*;
+
 /**
  * Esta clase se utliza para obtener todos los puertos COM disponibles
  *
@@ -7,4 +9,9 @@ package logica;
  */
 public class PuertoCom {
 
+    SerialPort[] puertos;
+    public SerialPort[] obtenerPuertos() {
+        puertos = SerialPort.getCommPorts();
+        return puertos;
+    }
 }
