@@ -13,8 +13,8 @@ public class EligeSistema {
     InformacionSistema informacion = new InformacionSistema();
 
     public static void escogeSistema() {
-        String os = informacion.sistemaOperativo();
-        String arquitectura = informacion.arquitecturaSistema();
+        String os = InformacionSistema.sistemaOperativo();
+        String arquitectura = InformacionSistema.arquitecturaSistema();
 
         if (os.contains("win")) {
             if (arquitectura.contains("64")) {

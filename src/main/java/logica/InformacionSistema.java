@@ -8,17 +8,17 @@ package logica;
  */
 public class InformacionSistema {
 
-    public String sistemaOperativo() {
+    public static String sistemaOperativo() {
         String nombre = System.getProperty("os.name").toLowerCase();
         return nombre;
     }
 
-    public String versionSistema() {
+    public static String versionSistema() {
         String version = System.getProperty("os.version").toLowerCase();
         return version;
     }
 
-    public String arquitecturaSistema() {
+    public static String arquitecturaSistema() {
         String arquitectura = System.getProperty("os.arch").toLowerCase();
         return arquitectura;
     }
