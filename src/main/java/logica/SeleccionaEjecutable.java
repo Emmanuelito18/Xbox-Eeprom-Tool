@@ -8,7 +8,7 @@ import logica.InformacionSistema;
  *
  * @author Emmanuelito18
  */
-public class EligeSistema {
+public class SeleccionaEjecutable {
 
     InformacionSistema informacion = new InformacionSistema();
 
