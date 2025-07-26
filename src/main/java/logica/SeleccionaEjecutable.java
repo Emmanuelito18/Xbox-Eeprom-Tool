@@ -9,13 +9,13 @@ import logica.InformacionSistema;
  * @author Emmanuelito18
  */
 public class SeleccionaEjecutable {
-
+    
     InformacionSistema informacion = new InformacionSistema();
-
+    
     public static void escogeSistema() {
         String os = InformacionSistema.sistemaOperativo();
         String arquitectura = InformacionSistema.arquitecturaSistema();
-
+        
         if (os.contains("win")) {
             if (arquitectura.contains("64")) {
                 System.out.println("Windows 64 bits");
@@ -28,13 +28,13 @@ public class SeleccionaEjecutable {
             } else {
                 System.out.println("MacOS apple sillicon");
             }
-        } else if (os.contains("nix") || os.contains("nux")) {
+        } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) {
             if (arquitectura.contains("64") || arquitectura.contains("amd64")) {
                 System.out.println("Linux 64 bits");
             } else {
                 System.out.println("Linux 32 bits");
             }
-
+            
             if (arquitectura.contains("aarch64")) {
                 System.out.println("Linux arm 64 bits");
             } else {
