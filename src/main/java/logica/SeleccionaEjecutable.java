@@ -1,6 +1,7 @@
 package logica;
 
 import logica.InformacionSistema;
+import logica.EjecutaEsptool;
 
 /**
  * Esta clase se encarga de elegir la version de esptool correspondiente según
@@ -9,36 +10,37 @@ import logica.InformacionSistema;
  * @author Emmanuelito18
  */
 public class SeleccionaEjecutable {
-    
+
     InformacionSistema informacion = new InformacionSistema();
-    
+
     public static void escogeSistema() {
         String os = InformacionSistema.sistemaOperativo();
         String arquitectura = InformacionSistema.arquitecturaSistema();
-        
+        EjecutaEsptool ejecutar = new EjecutaEsptool();
+
         if (os.contains("win")) {
             if (arquitectura.contains("64")) {
-                System.out.println("Windows 64 bits");
+                ejecutar.windows64();
             } else {
-                System.out.println("Windows 32 bits");
+                ejecutar.windows32();
             }
         } else if (os.contains("mac")) {
             if (arquitectura.contains("x64")) {
-                System.out.println("MacOS intel");
+                ejecutar.macIntel();
             } else {
-                System.out.println("MacOS apple sillicon");
+                ejecutar.macApple();
             }
         } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) {
             if (arquitectura.contains("64") || arquitectura.contains("amd64")) {
-                System.out.println("Linux 64 bits");
+                ejecutar.linux64();
             } else {
-                System.out.println("Linux 32 bits");
+                ejecutar.linux32();
             }
-            
+
             if (arquitectura.contains("aarch64")) {
-                System.out.println("Linux arm 64 bits");
+                ejecutar.linuxArm64();
             } else {
-                System.out.println("Linux arm 32 bits");
+                ejecutar.linuxArm32();
             }
         }
     }
