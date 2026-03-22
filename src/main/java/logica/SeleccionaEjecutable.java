@@ -13,11 +13,17 @@ public class SeleccionaEjecutable {
 
     InformacionSistema informacion = new InformacionSistema();
 
+    /**
+     * Este método se encarga de decidir que versión de esptool se va a ejecutar
+     */
     public static void escogeSistema() {
+        // <editor-fold defaultstate="collapsed" desc="Variables sistema">
         String os = InformacionSistema.sistemaOperativo();
         String arquitectura = InformacionSistema.arquitecturaSistema();
         EjecutaEsptool ejecutar = new EjecutaEsptool();
+        // </editor-fold>
 
+        // <editor-fold defaultstate="collapsed" desc="Escoge que versión de Esptool se ejecuta">
         if (os.contains("win")) {
             if (arquitectura.contains("64")) {
                 ejecutar.windows64();
@@ -43,5 +49,6 @@ public class SeleccionaEjecutable {
                 ejecutar.linuxArm32();
             }
         }
+        // </editor-fold>
     }
 }
