@@ -3,6 +3,7 @@ package logica;
 //<editor-fold defaultstate="collapsed" desc="Librerias del programa">
 import gui.Ventana;
 import logica.Tema;
+import logica.SeleccionaEjecutable;
 import javax.swing.SwingUtilities;//para cambair el tema del programa
 //</editor-fold>
 
@@ -17,7 +18,9 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        SeleccionaEjecutable seleccionaEjecutable=new SeleccionaEjecutable();
         Tema apariencia=new Tema();
+        seleccionaEjecutable.escogeSistema();
         apariencia.aplicarTemaPorDefecto(null);
 
         // Crear la ventana en el hilo de Swing
