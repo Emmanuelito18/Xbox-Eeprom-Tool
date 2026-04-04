@@ -59,7 +59,9 @@ public class EjecutorEsptool {
     // <editor-fold defaultstate="collapsed" desc="Arquitecturas soportadas de Windows">
     public static void arquitecturasWindows(Arquitectura arquitectura) {
         switch (arquitectura) {
-            
+            case X64://windows 64 bit
+                ejecutar.EsptoolWindows64();
+                break;
             case X86://windows 32 bit
                 ejecutar.EsptoolWindows32();
                 break;
