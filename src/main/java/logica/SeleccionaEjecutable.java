@@ -1,5 +1,7 @@
 package logica;
 
+import enums.Arquitectura;
+import enums.SistemaOperativo;
 import logica.InformacionSistema;
 import logica.EjecutaEsptool;
 
@@ -18,36 +20,57 @@ public class SeleccionaEjecutable {
      */
     public static void escogeSistema() {
         // <editor-fold defaultstate="collapsed" desc="Variables sistema">
-        String os = InformacionSistema.sistemaOperativo();
-        String arquitectura = InformacionSistema.arquitecturaSistema();
+        SistemaOperativo sistemaOperativo = DetectaSistema.detectarOS();
+        Arquitectura arquitectura = DetectaSistema.detectaArquitectura();
         EjecutaEsptool ejecutar = new EjecutaEsptool();
         // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Escoge que versión de Esptool se ejecuta">
-        if (os.contains("win")) {
-            if (arquitectura.contains("64")) {
-                ejecutar.windows64();
-            } else {
-                ejecutar.windows32();
-            }
-        } else if (os.contains("mac")) {
-            if (arquitectura.contains("x64")) {
-                ejecutar.macIntel();
-            } else {
-                ejecutar.macApple();
-            }
-        } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) {
-            if (arquitectura.contains("64") || arquitectura.contains("amd64")) {
-                ejecutar.linux64();
-            } else {
-                ejecutar.linux32();
-            }
-
-            if (arquitectura.contains("aarch64")) {
-                ejecutar.linuxArm64();
-            } else {
-                ejecutar.linuxArm32();
-            }
+        // <editor-fold defaultstate="collapsed" desc="Escoge que versión de Esptool se ejecuta"> 
+        switch (sistemaOperativo) {
+            case WINDOWS:
+                switch (arquitectura) {
+                    case X86:
+                        ejecutar.windows32();
+                        break;
+                    case X64:
+                        ejecutar.windows64();
+                        break;
+                    default:
+                        throw new RuntimeException("Arquitectura no soportada en Windows");
+                }
+                break;
+            case MAC:
+                switch (arquitectura) {
+                    case ARM64:
+                        ejecutar.macApple();
+                        break;
+                    case X64:
+                        ejecutar.macIntel();
+                        break;
+                    default:
+                        throw new RuntimeException("Arquitectura no soportada en Mac");
+                }
+                break;
+            case LINUX:
+                switch (arquitectura) {
+                    case ARM64:
+                        ejecutar.linuxArm64();
+                        break;
+                    case ARM32:
+                        ejecutar.linuxArm32();
+                        break;
+                    case X64:
+                        ejecutar.linux64();
+                        break;
+                    case X86:
+                        ejecutar.linux32();
+                        break;
+                    default:
+                        throw new RuntimeException("Arquitectura no soportada en Linux");
+                }
+                break;
+            default:
+                throw new RuntimeException("Sistema operativo no soportado");
         }
         // </editor-fold>
     }
