@@ -10,6 +10,7 @@ import logica.InformacionSistema;
  * Esta clase se encarga de detectar el OS y arquittectura del sistema
  * @author Emmanuelito18
  */
+// <editor-fold defaultstate="collapsed" desc="Clase DetectaSistema">
 public class DetectaSistema {
 
     // <editor-fold defaultstate="collapsed" desc="Variables sistema">
@@ -36,7 +37,7 @@ public class DetectaSistema {
      */
     // <editor-fold defaultstate="collapsed" desc="Detecta la arquitectura">
     public static Arquitectura detectaArquitectura(){
-        if (arquitectura.contains("aarch64") || arquitectura.contains("arm64")) return Arquitectura.ARM64;//si el nombre de la arquitectura contiene aarch4 devuelve la constante ARM64 del enum Arquitectura
+        if (arquitectura.contains("aarch64") || arquitectura.contains("arm64") || arquitectura.contains("armv8")) return Arquitectura.ARM64;//si el nombre de la arquitectura contiene aarch4 devuelve la constante ARM64 del enum Arquitectura
         if (arquitectura.contains("arm") || arquitectura.contains("aarch32") ||arquitectura.contains("armv7")) return Arquitectura.ARM32;
         if (arquitectura.contains("64")) return Arquitectura.X64;
         if (arquitectura.contains("86") || arquitectura.contains("32")) return Arquitectura.X86;
@@ -44,3 +45,4 @@ public class DetectaSistema {
         return Arquitectura.DESCONOCIDA;
     }// </editor-fold>
 }
+// </editor-fold>
